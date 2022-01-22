@@ -1,3 +1,5 @@
+import React from "react";
+
 const PickLanguage = (props: { setLanguage: (arg0: string) => void }) => (
   <div>
     <h1>Welcome To Unlimited Wordle!</h1>
