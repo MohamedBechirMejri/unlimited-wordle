@@ -7,6 +7,8 @@ const Main = () => {
   const [word, setWord] = useState("hello".split(""));
   const [currentAttempt, setCurrentAttempt] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(0);
+  const [isAttemptFull, setIsAttemptFull] = useState(false);
+  const [isAttemptEmpty, setIsAttemptEmpty] = useState(true);
 
   const [attempts, setAttempts] = useState([
     [],
@@ -42,14 +44,27 @@ const Main = () => {
           throw new Error("submit Function not implemented.");
         }}
         removeKey={(): void => {
-          throw new Error("back Function not implemented.");
+          if (isAttemptEmpty) return;
+          isAttemptFull && setIsAttemptFull(false);
+
+          const newAttempts = [...attempts];
+          newAttempts[currentAttempt][currentLetter] = ".";
+          setAttempts(newAttempts);
+          currentLetter > 0 && setCurrentLetter(currentLetter - 1);
+
+          currentLetter === 0 && setIsAttemptEmpty(true);
         }}
         addKey={(key: string): void => {
-          if (currentLetter > word.length - 1) return;
+          if (isAttemptFull) return;
+          isAttemptEmpty && setIsAttemptEmpty(false);
+
           const newAttempts = [...attempts];
           newAttempts[currentAttempt][currentLetter] = key;
           setAttempts(newAttempts);
-          setCurrentLetter(currentLetter + 1);
+
+          currentLetter < word.length - 1 &&
+            setCurrentLetter(currentLetter + 1);
+          currentLetter === word.length - 1 && setIsAttemptFull(true);
         }}
       />
     </div>
