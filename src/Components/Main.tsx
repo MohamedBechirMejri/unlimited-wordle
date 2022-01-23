@@ -4,7 +4,9 @@ import Messages from "./Main/Messages";
 import Timer from "./Main/Timer";
 import GameBoard from "./Main/GameBoard";
 const Main = () => {
-  const word = "hello".split("");
+  const [word, setWord] = useState("hello".split(""));
+  const [currentAttempt, setCurrentAttempt] = useState(0);
+  const [currentLetter, setCurrentLetter] = useState(0);
 
   const [attempts, setAttempts] = useState([
     [],
@@ -24,7 +26,7 @@ const Main = () => {
       newAttempts[i] = attempt;
     });
     setAttempts(newAttempts);
-  });
+  }, [word]);
 
   return (
     <div>
@@ -33,7 +35,7 @@ const Main = () => {
         <Timer />
       </div>
 
-      <GameBoard />
+      <GameBoard attempts={attempts} />
 
       <Keyboard
         submitWord={(): void => {
@@ -42,8 +44,12 @@ const Main = () => {
         removeKey={(): void => {
           throw new Error("back Function not implemented.");
         }}
-        addKey={(arg0: string): void => {
-          throw new Error("add Function not implemented.");
+        addKey={(key: string): void => {
+          if (currentLetter > word.length - 1) return;
+          const newAttempts = [...attempts];
+          newAttempts[currentAttempt][currentLetter] = key;
+          setAttempts(newAttempts);
+          setCurrentLetter(currentLetter + 1);
         }}
       />
     </div>
