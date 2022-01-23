@@ -1,6 +1,6 @@
 import React from "react";
 
-const GameBoard = () => {
+const GameBoard = ({ attempts }: { attempts: string[][] }) => {
   return (
     <div>
       {attempts.map((attempt, index) => (
