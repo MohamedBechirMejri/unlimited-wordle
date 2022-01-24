@@ -14,29 +14,32 @@ const Header = ({
   setPage: (arg0: string) => void;
 }) => {
   return (
-    <div>
+    <div className="fixed flex items-center justify-between w-screen ">
       <h1>UW</h1>
-      <button
-        onClick={() => {
-          setPage(page === "info" ? "" : "info");
-        }}
-      >
-        {page === "info" ? <MdClose /> : <MdHelpOutline />}
-      </button>
-      <button
-        onClick={() => {
-          setPage(page === "leaderboard" ? "" : "leaderboard");
-        }}
-      >
-        {page === "leaderboard" ? <MdClose /> : <MdOutlineLeaderboard />}
-      </button>
-      <button
-        onClick={() => {
-          setPage(page === "settings" ? "" : "settings");
-        }}
-      >
-        {page === "settings" ? <MdClose /> : <MdOutlineSettings />}
-      </button>
+      <div>
+        {" "}
+        <button
+          onClick={() => {
+            setPage(page === "info" ? "" : "info");
+          }}
+        >
+          {page === "info" ? <MdClose /> : <MdHelpOutline />}
+        </button>
+        <button
+          onClick={() => {
+            setPage(page === "leaderboard" ? "" : "leaderboard");
+          }}
+        >
+          {page === "leaderboard" ? <MdClose /> : <MdOutlineLeaderboard />}
+        </button>
+        <button
+          onClick={() => {
+            setPage(page === "settings" ? "" : "settings");
+          }}
+        >
+          {page === "settings" ? <MdClose /> : <MdOutlineSettings />}
+        </button>
+      </div>
     </div>
   );
 };
