@@ -1,12 +1,14 @@
 import React from "react";
 
-const GameBoard = ({ attempts }: { attempts: string[][] }) => {
+const GameBoard = ({ attempts }: { attempts: object }) => {
   return (
     <div>
-      {attempts.map((attempt, index) => (
-        <div key={index}>
-          {attempt.map((letter, index) => (
-            <span key={index}>{letter}</span>
+      {Object.values(attempts).map((attempt, i) => (
+        <div key={i}>
+          {attempt.letters.map((letter: string, i: number) => (
+            <span key={i} className={attempt.statuses[i]}>
+              {letter}
+            </span>
           ))}
         </div>
       ))}
