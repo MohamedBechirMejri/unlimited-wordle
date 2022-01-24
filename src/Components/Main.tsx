@@ -19,6 +19,7 @@ const Main = () => {
   const [currentLetter, setCurrentLetter] = useState(0);
   const [isAttemptFull, setIsAttemptFull] = useState(false);
   const [isAttemptEmpty, setIsAttemptEmpty] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
     const dots = [];
@@ -81,8 +82,13 @@ const Main = () => {
       }
       setKeysStatus(keys);
     });
+    if (attemptz[currentAttempt].letters === word) {
+      setCurrentAttempt(0);
+      setIsGameOver(true);
+    } else {
+      setCurrentAttempt(currentAttempt + 1);
+    }
     setAttempts(attemptz);
-    setCurrentAttempt(currentAttempt + 1);
     setCurrentLetter(0);
     setIsAttemptFull(false);
     setIsAttemptEmpty(true);
