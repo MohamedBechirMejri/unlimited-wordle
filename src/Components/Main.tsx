@@ -11,13 +11,11 @@ const Main = () => {
     misplaced: [],
     incorrect: [],
   });
-  // const [currentAttempt, setCurrentAttempt] = useState(0);
-  // const [currentLetter, setCurrentLetter] = useState(0);
-  // const [isAttemptFull, setIsAttemptFull] = useState(false);
-  // const [isAttemptEmpty, setIsAttemptEmpty] = useState(true);
-  // const [isGameOver, setIsGameOver] = useState(false);
-  // const [isGameWon, setIsGameWon] = useState(false);
-  // const [coords, setCoords] = useState([[], [], [], [], [], []] as string[][]);
+  const [currentAttempt, setCurrentAttempt] = useState(1);
+  const [currentLetter, setCurrentLetter] = useState(0);
+  const [isAttemptFull, setIsAttemptFull] = useState(false);
+  const [isAttemptEmpty, setIsAttemptEmpty] = useState(true);
+
   useEffect(() => {
     const dots = [];
     const statuses = [];
@@ -57,22 +55,24 @@ const Main = () => {
     // ("");
   };
   const removeKey = (): void => {
-    // if (isAttemptEmpty) return;
-    // isAttemptFull && setIsAttemptFull(false);
-    // const newAttempts = [...attempts];
-    // newAttempts[currentAttempt][currentLetter] = ".";
-    // setAttempts(newAttempts);
-    // currentLetter > 0 && setCurrentLetter(currentLetter - 1);
-    // currentLetter === 0 && setIsAttemptEmpty(true);
+    if (isAttemptEmpty) return;
+    isAttemptFull && setIsAttemptFull(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const newAttempts = { ...attempts } as any; // todo: fix any type
+    newAttempts[currentAttempt].letters[currentLetter] = ".";
+    setAttempts(newAttempts);
+    currentLetter > 0 && setCurrentLetter(currentLetter - 1);
+    currentLetter === 0 && setIsAttemptEmpty(true);
   };
   const addKey = (key: string): void => {
-    // if (isAttemptFull) return;
-    // isAttemptEmpty && setIsAttemptEmpty(false);
-    // const newAttempts = [...attempts];
-    // newAttempts[currentAttempt][currentLetter] = key;
-    // setAttempts(newAttempts);
-    // currentLetter < word.length - 1 && setCurrentLetter(currentLetter + 1);
-    // currentLetter === word.length - 1 && setIsAttemptFull(true);
+    if (isAttemptFull) return;
+    isAttemptEmpty && setIsAttemptEmpty(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const newAttempts = { ...attempts } as any; // todo: fix this type
+    newAttempts[currentAttempt].letters[currentLetter] = key;
+    setAttempts(newAttempts);
+    currentLetter < word.length - 1 && setCurrentLetter(currentLetter + 1);
+    currentLetter === word.length - 1 && setIsAttemptFull(true);
   };
 
   return (
