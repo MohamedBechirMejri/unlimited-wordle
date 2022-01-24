@@ -18,20 +18,28 @@ const Keyboard = ({
 }) => {
   const { correct, incorrect, misplaced } = keysStatus;
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center w-screen ">
       {layouts.en.map((row, rowIndex) => (
-        <div key={rowIndex}>
+        <div key={rowIndex} className="flex items-center justify-center w-full">
           {row.map((key, keyIndex) => (
             <button
               key={keyIndex}
               className={`"
+               text-2xl font-bold text-center border rounded p-4 active:scale-125 bg-white shadow transition-all select-none
                 ${
                   correct.includes(key)
-                    ? "correct"
+                    ? "bg-[crimson] text-white"
                     : misplaced.includes(key)
-                    ? "misplaced"
+                    ? "bg-[#ffe000]"
                     : incorrect.includes(key)
-                    ? "incorrect"
+                    ? "bg-[#6b6b6b] text-white"
+                    : null
+                }
+                ${
+                  key === "enter"
+                    ? "bg-[#03ca77] text-white"
+                    : key === "bksp"
+                    ? "bg-[#0084ff] text-white"
                     : null
                 }
               "`}
