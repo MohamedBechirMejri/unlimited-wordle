@@ -125,7 +125,7 @@ const Main = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-between w-screen h-screen max-h-screen ">
       <div>
         <Messages />
         <Timer />
