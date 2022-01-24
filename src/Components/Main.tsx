@@ -10,6 +10,10 @@ const Main = () => {
     correct: [],
     misplaced: [],
     incorrect: [],
+  } as {
+    correct: string[];
+    misplaced: string[];
+    incorrect: string[];
   });
   const [currentAttempt, setCurrentAttempt] = useState(1);
   const [currentLetter, setCurrentLetter] = useState(0);
@@ -52,13 +56,46 @@ const Main = () => {
   }, [word]);
 
   const submitWord = (): void => {
-    // ("");
+    const attemptz = attempts as {
+      [key: number]: {
+        letters: string[];
+        statuses: string[];
+      };
+    };
+
+    attemptz[currentAttempt].letters.forEach((letter, i) => {
+      const keys = keysStatus as {
+        correct: string[];
+        misplaced: string[];
+        incorrect: string[];
+      };
+      if (letter === word[i]) {
+        attemptz[currentAttempt].statuses[i] = "correct";
+        keys.correct.push(word[i]);
+      } else if (word.includes(letter) && letter !== word[i]) {
+        attemptz[currentAttempt].statuses[i] = "misplaced";
+        keys.misplaced.push(letter);
+      } else {
+        attemptz[currentAttempt].statuses[i] = "incorrect";
+        keys.incorrect.push(letter);
+      }
+      setKeysStatus(keys);
+    });
+    setAttempts(attemptz);
+    setCurrentAttempt(currentAttempt + 1);
+    setCurrentLetter(0);
+    setIsAttemptFull(false);
+    setIsAttemptEmpty(true);
   };
   const removeKey = (): void => {
     if (isAttemptEmpty) return;
     isAttemptFull && setIsAttemptFull(false);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const newAttempts = { ...attempts } as any; // todo: fix any type
+    const newAttempts = { ...attempts } as {
+      [key: number]: {
+        letters: string[];
+        statuses: string[];
+      };
+    };
     newAttempts[currentAttempt].letters[currentLetter] = ".";
     setAttempts(newAttempts);
     currentLetter > 0 && setCurrentLetter(currentLetter - 1);
@@ -67,8 +104,12 @@ const Main = () => {
   const addKey = (key: string): void => {
     if (isAttemptFull) return;
     isAttemptEmpty && setIsAttemptEmpty(false);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const newAttempts = { ...attempts } as any; // todo: fix this type
+    const newAttempts = { ...attempts } as {
+      [key: number]: {
+        letters: string[];
+        statuses: string[];
+      };
+    };
     newAttempts[currentAttempt].letters[currentLetter] = key;
     setAttempts(newAttempts);
     currentLetter < word.length - 1 && setCurrentLetter(currentLetter + 1);
