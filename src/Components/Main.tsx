@@ -64,7 +64,7 @@ const Main = () => {
         statuses: string[];
       };
     };
-
+    if (attemptz[currentAttempt].letters.includes(".")) return;
     attemptz[currentAttempt].letters.forEach((letter, i) => {
       const keys = keysStatus as {
         correct: string[];
@@ -130,7 +130,7 @@ const Main = () => {
         <Messages />
         <Timer />
       </div>
-      <GameBoard attempts={attempts} />
+      <GameBoard attempts={attempts} currentAttempt={currentAttempt} />
       <Keyboard
         submitWord={submitWord}
         removeKey={removeKey}
