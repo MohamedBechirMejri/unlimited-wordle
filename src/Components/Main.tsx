@@ -55,6 +55,11 @@ const Main = () => {
         statuses: [...statuses],
       },
     });
+    setKeysStatus({
+      correct: [],
+      misplaced: [],
+      incorrect: [],
+    });
   }, [word]);
 
   const submitWord = (): void => {
@@ -83,10 +88,15 @@ const Main = () => {
       }
       setKeysStatus(keys);
     });
-    if (attemptz[currentAttempt].letters === word || currentAttempt === 6) {
-      setCurrentAttempt(0);
+    if (
+      attemptz[currentAttempt].letters.join("") === word.join("") ||
+      currentAttempt === 6
+    ) {
+      setCurrentAttempt(1);
       setIsGameOver(true);
+
       if (attemptz[currentAttempt].letters === word) setIsGameWon(true);
+      setWord("tesst".split(""));
     } else {
       setCurrentAttempt(currentAttempt + 1);
     }
