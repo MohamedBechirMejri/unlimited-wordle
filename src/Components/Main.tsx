@@ -3,8 +3,10 @@ import Keyboard from "./Main/Keyboard";
 import Messages from "./Main/Messages";
 import Timer from "./Main/Timer";
 import GameBoard from "./Main/GameBoard";
+import { generateWord } from "../Utils/generateWord";
+
 const Main = () => {
-  const [word, setWord] = useState("hello".split(""));
+  const [word, setWord] = useState(generateWord().split(""));
   const [attempts, setAttempts] = useState({});
   const [keysStatus, setKeysStatus] = useState({
     correct: [],
@@ -96,7 +98,6 @@ const Main = () => {
       setIsGameOver(true);
 
       if (attemptz[currentAttempt].letters === word) setIsGameWon(true);
-      setWord("tesst".split(""));
     } else {
       setCurrentAttempt(currentAttempt + 1);
     }
