@@ -4,6 +4,7 @@ import Messages from "./Main/Messages";
 import Timer from "./Main/Timer";
 import GameBoard from "./Main/GameBoard";
 import { generateWord } from "../Utils/generateWord";
+import GameOver from "./Main/GameOver";
 
 const Main = () => {
   const [word, setWord] = useState(generateWord().split(""));
@@ -64,6 +65,15 @@ const Main = () => {
     });
   }, [word]);
 
+  const playAgain = () => {
+    setWord(generateWord().split(""));
+    setCurrentAttempt(1);
+    setCurrentLetter(0);
+    setIsAttemptFull(false);
+    setIsAttemptEmpty(true);
+    setIsGameOver(false);
+    setIsGameWon(false);
+  };
   const submitWord = (): void => {
     const attemptz = attempts as {
       [key: number]: {
@@ -142,12 +152,16 @@ const Main = () => {
         <Timer />
       </div>
       <GameBoard attempts={attempts} currentAttempt={currentAttempt} />
-      <Keyboard
-        submitWord={submitWord}
-        removeKey={removeKey}
-        addKey={addKey}
-        keysStatus={keysStatus}
-      />
+      {!isGameOver ? (
+        <Keyboard
+          submitWord={submitWord}
+          removeKey={removeKey}
+          addKey={addKey}
+          keysStatus={keysStatus}
+        />
+      ) : (
+        <GameOver playAgain={playAgain} />
+      )}
     </div>
   );
 };
