@@ -1,5 +1,9 @@
 import englishWords from "an-array-of-english-words";
 
-export const generateWord = (): string => {
-  return englishWords[Math.floor(Math.random() * englishWords.length)];
+export const generateWord = (isChallengeMode = false): string => {
+  let words = englishWords;
+  if (!isChallengeMode) {
+    words = words.filter(word => word.length <= 5);
+  }
+  return words[Math.floor(Math.random() * words.length)];
 };
