@@ -41,7 +41,7 @@ const Keyboard = ({
                     : key === "<="
                     ? "bg-[#0084ff] text-white"
                     : null
-                }
+                }  transition-all
               "`}
               onClick={() => {
                 key === "enter"
