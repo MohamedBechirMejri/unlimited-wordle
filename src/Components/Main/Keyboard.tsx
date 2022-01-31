@@ -38,7 +38,7 @@ const Keyboard = ({
                 ${
                   key === "enter"
                     ? "bg-[#03ca77] text-white"
-                    : key === "bksp"
+                    : key === "<="
                     ? "bg-[#0084ff] text-white"
                     : null
                 }
