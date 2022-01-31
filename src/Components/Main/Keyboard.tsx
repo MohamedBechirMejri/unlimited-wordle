@@ -25,7 +25,7 @@ const Keyboard = ({
             <button
               key={keyIndex}
               className={`"
-               text-2xl font-bold text-center border rounded p-2 sm:p-4 active:scale-125 bg-white shadow transition-all select-none
+               text-2xl font-bold text-center border rounded p-[2.55%] sm:p-4 active:scale-125 bg-white shadow transition-all select-none
                 ${
                   correct.includes(key)
                     ? "bg-[crimson] text-white"
