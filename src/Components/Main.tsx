@@ -26,6 +26,8 @@ const Main = () => {
   const [isGameWon, setIsGameWon] = useState(false);
 
   useEffect(() => {
+    console.log("word", word);
+
     const dots = [];
     const statuses = [];
     for (let i = 0; i < word.length; i++) {
@@ -106,8 +108,8 @@ const Main = () => {
     ) {
       setCurrentAttempt(1);
       setIsGameOver(true);
-
-      if (attemptz[currentAttempt].letters === word) setIsGameWon(true);
+      if (attemptz[currentAttempt].letters.join("") === word.join(""))
+        setIsGameWon(true);
     } else {
       setCurrentAttempt(currentAttempt + 1);
     }
@@ -160,7 +162,7 @@ const Main = () => {
           keysStatus={keysStatus}
         />
       ) : (
-        <GameOver playAgain={playAgain} />
+        <GameOver playAgain={playAgain} isGameWon={isGameWon} />
       )}
     </div>
   );
