@@ -115,6 +115,10 @@ const Main = () => {
       if (attemptz[currentAttempt].letters.join("") === word.join("")) {
         setIsGameWon(true);
         setMessage(generateCongrats());
+        setStreak(streak + 1);
+      } else {
+        setStreak(0);
+        setMessage("Game Over");
       }
     } else {
       setCurrentAttempt(currentAttempt + 1);
