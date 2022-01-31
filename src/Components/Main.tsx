@@ -110,8 +110,18 @@ const Main = () => {
     ) {
       setCurrentAttempt(1);
       setIsGameOver(true);
-      if (attemptz[currentAttempt].letters.join("") === word.join(""))
+      if (attemptz[currentAttempt].letters.join("") === word.join("")) {
         setIsGameWon(true);
+        const words = [
+          "Congrats!",
+          "You Got It!",
+          "That's the one!",
+          "Nailed It!",
+          "Correct!",
+          "Awesome!",
+        ];
+        setMessage(words[Math.floor(Math.random() * words.length)]);
+      }
     } else {
       setCurrentAttempt(currentAttempt + 1);
     }
@@ -153,7 +163,7 @@ const Main = () => {
     <div
       className={` " flex flex-col items-center ${
         isGameOver ? "justify-center gap-8" : "justify-between"
-      } w-screen h-screen max-h-screen " `}
+      } w-screen h-screen max-h-screen transition-all  " `}
     >
       <div className="flex items-center w-screen mt-12 justify-evenly">
         <Messages message={message} />
