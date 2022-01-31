@@ -24,6 +24,8 @@ const Main = () => {
   const [isAttemptEmpty, setIsAttemptEmpty] = useState(true);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isGameWon, setIsGameWon] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     console.log("word", word);
@@ -153,9 +155,9 @@ const Main = () => {
         isGameOver ? "justify-center gap-8" : "justify-between"
       } w-screen h-screen max-h-screen " `}
     >
-      <div>
-        <Messages />
-        <Timer />
+      <div className="flex items-center w-screen mt-12 justify-evenly">
+        <Messages message={message} />
+        <Timer streak={streak} />
       </div>
       <GameBoard attempts={attempts} currentAttempt={currentAttempt} />
       {!isGameOver ? (
