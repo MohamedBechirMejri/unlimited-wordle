@@ -163,7 +163,7 @@ const Main = () => {
         isGameOver ? "justify-center gap-8" : "justify-end gap-20"
       } w-screen h-screen max-h-screen transition-all  " `}
     >
-      <div className=" flex items-center max-w-[500px] w-screen justify-evenly">
+      <div className=" flex items-center max-w-[500px] w-screen justify-evenly font-bold">
         <Messages message={message} />
         <Timer streak={streak} />
       </div>
