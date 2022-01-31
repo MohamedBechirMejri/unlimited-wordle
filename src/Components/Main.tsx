@@ -5,6 +5,7 @@ import Timer from "./Main/Timer";
 import GameBoard from "./Main/GameBoard";
 import { generateWord } from "../Utils/generateWord";
 import GameOver from "./Main/GameOver";
+import { generateCongrats } from "../Utils/generateCongrats";
 
 const Main = () => {
   const [word, setWord] = useState(generateWord().split(""));
@@ -67,6 +68,7 @@ const Main = () => {
       misplaced: [],
       incorrect: [],
     });
+    setMessage("");
   }, [word]);
 
   const playAgain = () => {
@@ -112,15 +114,7 @@ const Main = () => {
       setIsGameOver(true);
       if (attemptz[currentAttempt].letters.join("") === word.join("")) {
         setIsGameWon(true);
-        const words = [
-          "Congrats!",
-          "You Got It!",
-          "That's the one!",
-          "Nailed It!",
-          "Correct!",
-          "Awesome!",
-        ];
-        setMessage(words[Math.floor(Math.random() * words.length)]);
+        setMessage(generateCongrats());
       }
     } else {
       setCurrentAttempt(currentAttempt + 1);
