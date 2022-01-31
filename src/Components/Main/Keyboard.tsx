@@ -46,7 +46,7 @@ const Keyboard = ({
               onClick={() => {
                 key === "enter"
                   ? submitWord()
-                  : key === "bksp"
+                  : key === "<="
                   ? removeKey()
                   : addKey(key);
               }}
