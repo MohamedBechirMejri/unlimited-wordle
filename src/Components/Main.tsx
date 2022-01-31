@@ -148,7 +148,11 @@ const Main = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between w-screen h-screen max-h-screen ">
+    <div
+      className={` " flex flex-col items-center ${
+        isGameOver ? "justify-center gap-8" : "justify-between"
+      } w-screen h-screen max-h-screen " `}
+    >
       <div>
         <Messages />
         <Timer />
