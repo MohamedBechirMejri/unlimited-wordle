@@ -118,7 +118,7 @@ const Main = () => {
         setStreak(streak + 1);
       } else {
         setStreak(0);
-        setMessage("Game Over");
+        setMessage(word.join("").toUpperCase());
       }
     } else {
       setCurrentAttempt(currentAttempt + 1);
