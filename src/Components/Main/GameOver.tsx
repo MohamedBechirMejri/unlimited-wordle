@@ -8,12 +8,12 @@ const GameOver = ({
   isGameWon: boolean;
 }) => {
   return (
-    <div>
-      <h1>{isGameWon ? "Good Job!" : "Game Over"}</h1>
-      <button onClick={playAgain}>
-        {isGameWon ? "Next Word" : "Play Again"}
-      </button>
-    </div>
+    <button
+      onClick={playAgain}
+      className="px-4 py-2 text-2xl font-bold text-white transition-all bg-green-400 rounded active:scale-95"
+    >
+      {isGameWon ? "Next Word" : "Play Again"}
+    </button>
   );
 };
 
