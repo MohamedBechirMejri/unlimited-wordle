@@ -1,5 +1,4 @@
 import React from "react";
-
 const GameBoard = ({
   attempts,
   currentAttempt,
@@ -15,15 +14,12 @@ const GameBoard = ({
           className="flex items-center justify-center w-full h-1/6"
         >
           {attempt.letters.map((letter: string, i: number) => {
-            console.log(index + 1 === currentAttempt);
             return (
               <div
                 key={i}
                 className="flex items-center justify-center bg-gradient-to-b from-sky-400  h-full border-[.1px] border-sky-200 shadow "
                 style={{
                   width: `${100 / attempt.letters.length}%`,
-                  // background:
-                  //   attempt.statuses[i] === "correct" ? "crimson" : "",
                 }}
               >
                 <p
@@ -37,20 +33,14 @@ const GameBoard = ({
                   style={{
                     borderRadius:
                       attempt.statuses[i] === "misplaced" ? "100%" : "",
-                    // background:
-                    //   attempt.statuses[i] === "correct"
-                    //     ? "crimson"
-                    //     : attempt.statuses[i] === "misplaced"
-                    //     ? "#ffe000"
-                    //     : "",
+
                     animationName:
                       attempt.statuses[i] === "correct"
                         ? "revealCorrect"
                         : attempt.statuses[i] === "misplaced"
                         ? "revealMisplaced"
                         : "",
-                    animationDelay: `${i * 0.3}s`,
-                    // if index === currentAttempt => animate with delay * i
+                    animationDelay: `${(i + 1) * 0.3}s`,
                   }}
                 >
                   {letter}
