@@ -15,11 +15,10 @@ const GameBoard = ({
         >
           {attempt.letters.map((letter: string, i: number) => {
             const status = attempt.statuses[i];
-            const width = `${100 / attempt.letters.length}%`;
             return (
               <div
                 key={i}
-                className={` "flex items-center justify-center bg-gradient-to-b from-sky-400 w-[${width}] h-full border-[.1px] border-sky-200 shadow " `}
+                className={` "flex items-center justify-center bg-gradient-to-b from-sky-400 w-full h-full border-[.1px] border-sky-200 shadow " `}
               >
                 <p
                   className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 ${
