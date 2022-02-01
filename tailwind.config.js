@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       animation: {
         reveal: "reveal .45s forwards ",
+        revealCorrect: "revealCorrect .45s forwards ",
       },
       keyframes: {
         reveal: {
@@ -17,6 +18,11 @@ module.exports = {
           },
           "100%": {
             opacity: 1,
+          },
+        },
+        revealCorrect: {
+          "100%": {
+            background: "crimson",
           },
         },
       },
