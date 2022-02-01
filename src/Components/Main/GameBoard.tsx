@@ -14,6 +14,7 @@ const GameBoard = ({
           className="flex items-center justify-center w-full h-1/6"
         >
           {attempt.letters.map((letter: string, i: number) => {
+            const status = attempt.statuses[i];
             return (
               <div
                 key={i}
@@ -24,20 +25,19 @@ const GameBoard = ({
               >
                 <p
                   className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 ${
-                    attempt.statuses[i] === "correct"
+                    status === "correct"
                       ? "animate-revealCorrect"
-                      : attempt.statuses[i] === "misplaced"
+                      : status === "misplaced"
                       ? "animate-revealMisplaced"
                       : ""
                   } `}
                   style={{
-                    borderRadius:
-                      attempt.statuses[i] === "misplaced" ? "100%" : "",
+                    borderRadius: status === "misplaced" ? "100%" : "",
 
                     animationName:
-                      attempt.statuses[i] === "correct"
+                      status === "correct"
                         ? "revealCorrect"
-                        : attempt.statuses[i] === "misplaced"
+                        : status === "misplaced"
                         ? "revealMisplaced"
                         : "",
                     animationDelay: `${(i + 1) * 0.3}s`,
