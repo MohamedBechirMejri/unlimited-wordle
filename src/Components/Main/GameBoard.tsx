@@ -15,25 +15,21 @@ const GameBoard = ({
         >
           {attempt.letters.map((letter: string, i: number) => {
             const status = attempt.statuses[i];
+            const width = `${100 / attempt.letters.length}%`;
             return (
               <div
                 key={i}
-                className="flex items-center justify-center bg-gradient-to-b from-sky-400  h-full border-[.1px] border-sky-200 shadow "
-                style={{
-                  width: `${100 / attempt.letters.length}%`,
-                }}
+                className={` "flex items-center justify-center bg-gradient-to-b from-sky-400 w-[${width}] h-full border-[.1px] border-sky-200 shadow " `}
               >
                 <p
                   className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 ${
                     status === "correct"
                       ? "animate-revealCorrect"
                       : status === "misplaced"
-                      ? "animate-revealMisplaced"
+                      ? "animate-revealMisplaced rounded-full"
                       : ""
                   } `}
                   style={{
-                    borderRadius: status === "misplaced" ? "100%" : "",
-
                     animationName:
                       status === "correct"
                         ? "revealCorrect"
