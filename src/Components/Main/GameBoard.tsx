@@ -1,4 +1,5 @@
 import React from "react";
+import Sound from "./Sound";
 const GameBoard = ({
   attempts,
   currentAttempt,
@@ -20,6 +21,7 @@ const GameBoard = ({
                 key={i}
                 className={` "flex items-center justify-center bg-gradient-to-b from-sky-400 w-full h-full border-[.1px] border-sky-200 shadow " `}
               >
+                <Sound status={status} timeout={(i + 1) * 300} />
                 <p
                   className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 ${
                     status === "correct"

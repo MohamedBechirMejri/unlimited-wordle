@@ -10,11 +10,13 @@ const Sound = ({ status, timeout }: { status: string; timeout: number }) => {
         ? correctSound
         : status === "incorrect"
         ? incorrectSound
-        : misplacedSound
+        : status === "misplaced"
+        ? misplacedSound
+        : ""
     );
     setTimeout(() => {
       audio.play();
-    }, (timeout + 1) * 300);
+    }, timeout);
   }, [status]);
   return <span></span>;
 };
