@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import correctSound from "../../Assets/Sounds/correct.mp3";
 import incorrectSound from "../../Assets/Sounds/incorrect.mp3";
-import misplacedSound from "../../Assets/Sounds/correct.mp3";
+import misplacedSound from "../../Assets/Sounds/misplaced.mp3";
 
 const Sound = ({ status, timeout }: { status: string; timeout: number }) => {
   useEffect(() => {
