@@ -183,7 +183,7 @@ const Main = () => {
         />
       ) : (
         <>
-          <AttemptSound attempt={a} />;
+          <AttemptSound attempt={a} />
           <GameOver playAgain={playAgain} isGameWon={isGameWon} />
         </>
       )}
