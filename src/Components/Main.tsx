@@ -6,6 +6,7 @@ import GameBoard from "./Main/GameBoard";
 import { generateWord } from "../Utils/generateWord";
 import GameOver from "./Main/GameOver";
 import { generateCongrats } from "../Utils/generateCongrats";
+import AttemptSound from "./Main/AttemptSound";
 
 const Main = () => {
   const [word, setWord] = useState(generateWord().split(""));
@@ -27,6 +28,7 @@ const Main = () => {
   const [isGameWon, setIsGameWon] = useState(false);
   const [streak, setStreak] = useState(0);
   const [message, setMessage] = useState("");
+  const [a, setA] = useState([] as string[]);
 
   useEffect(() => {
     console.log("word", word);
@@ -69,6 +71,7 @@ const Main = () => {
       incorrect: [],
     });
     setMessage("");
+    setA([]);
   }, [word]);
 
   const playAgain = () => {
@@ -110,8 +113,10 @@ const Main = () => {
       attemptz[currentAttempt].letters.join("") === word.join("") ||
       currentAttempt === 6
     ) {
+      setA(attemptz[currentAttempt].statuses);
       setCurrentAttempt(1);
       setIsGameOver(true);
+
       if (attemptz[currentAttempt].letters.join("") === word.join("")) {
         setIsGameWon(true);
         setMessage(generateCongrats());
@@ -167,6 +172,7 @@ const Main = () => {
         <Messages message={message} />
         <Timer streak={streak} />
       </div>
+
       <GameBoard attempts={attempts} currentAttempt={currentAttempt} />
       {!isGameOver ? (
         <Keyboard
@@ -176,7 +182,10 @@ const Main = () => {
           keysStatus={keysStatus}
         />
       ) : (
-        <GameOver playAgain={playAgain} isGameWon={isGameWon} />
+        <>
+          <AttemptSound attempt={a} />;
+          <GameOver playAgain={playAgain} isGameWon={isGameWon} />
+        </>
       )}
     </div>
   );
