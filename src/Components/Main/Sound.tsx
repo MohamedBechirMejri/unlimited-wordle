@@ -19,7 +19,7 @@ const Sound = ({ status, timeout }: { status: string; timeout: number }) => {
       audio.play();
     }, timeout);
   }, [status]);
-  return <span></span>;
+  return <></>;
 };
 
 export default Sound;
