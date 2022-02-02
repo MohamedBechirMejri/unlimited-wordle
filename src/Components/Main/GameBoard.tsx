@@ -1,9 +1,7 @@
 import React from "react";
-import AttemptSound from "./AttemptSound";
 import Sound from "./Sound";
 const GameBoard = ({
   attempts,
-  currentAttempt,
 }: {
   attempts: object;
   currentAttempt: number;
@@ -15,11 +13,6 @@ const GameBoard = ({
           key={index}
           className="flex items-center justify-center w-full h-1/6"
         >
-          {!attempt.statuses.includes("incorrect") &&
-            !attempt.statuses.includes("misplaced") &&
-            !attempt.statuses.includes("empty") && (
-              <AttemptSound attempt={attempt.statuses} />
-            )}
           {attempt.letters.map((letter: string, i: number) => {
             const status = attempt.statuses[i];
             return (
@@ -28,7 +21,6 @@ const GameBoard = ({
                 className={` "flex items-center justify-center bg-gradient-to-b from-sky-400 w-full h-full border-[.1px] border-sky-200 shadow " `}
               >
                 <Sound status={status} timeout={(i + 1) * 250} />
-
                 <p
                   className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 ${
                     status === "correct"
