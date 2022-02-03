@@ -21,11 +21,12 @@ const App = () => {
     const localSettings = localStorage.getItem("settings");
     if (localSettings) {
       setSettings(JSON.parse(localSettings));
-    } else {
-      // set default settings in local storage
-      localStorage.setItem("settings", JSON.stringify(settings));
     }
   }, []);
+  useEffect(() => {
+    // update settings in local storage
+    localStorage.setItem("settings", JSON.stringify(settings));
+  }, [settings]);
 
   return (
     <SettingsContext.Provider value={settings}>
