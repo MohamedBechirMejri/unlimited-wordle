@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PickLanguage from "./Components/PickLanguage";
 import { SettingsContext } from "./Utils/SettingsContext";
 import Header from "./Components/Header";
@@ -15,6 +15,16 @@ const App = () => {
     colorBlindMode: false,
     challengeMode: false,
   });
+
+  useEffect(() => {
+    // check local storage for settings
+    const localSettings = localStorage.getItem("settings");
+    if (localSettings) {
+      setSettings(JSON.parse(localSettings));
+    }
+    // set default settings in local storage
+    localStorage.setItem("settings", JSON.stringify(settings));
+  }, [settings]);
 
   return (
     <SettingsContext.Provider value={settings}>
