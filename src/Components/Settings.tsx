@@ -20,9 +20,9 @@ const Settings = ({
   }) => void;
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-scren">
-      <h1>Settings</h1>
-      <div className="flex items-center justify-between w-full p-8">
+    <div className="flex flex-col items-center justify-center h-screen text-xl w-scren animate-reveal ">
+      <h1 className="text-3xl font-bold">Settings</h1>
+      <div className="flex items-center justify-between w-full gap-4 p-8">
         <h2>Language</h2>
         <select
           name="lang"
@@ -35,46 +35,58 @@ const Settings = ({
           <option value="fr">Français</option>
         </select>
       </div>
-      <div className="flex items-center justify-between w-full p-8">
+      <div
+        className="flex items-center justify-between w-full gap-4 p-8"
+        onClick={() =>
+          setSettings({ ...settings, darkTheme: !settings.darkTheme })
+        }
+      >
         <h2>Dark Theme</h2>
         <button
-          onClick={() =>
-            setSettings({ ...settings, darkTheme: !settings.darkTheme })
-          }
-        >
-          {settings.darkTheme ? "On" : "Off"}
-        </button>
+          className={`${
+            settings.darkTheme ? "bg-green-500" : "bg-red-500 "
+          } text-white p-4 rounded-lg transition-all active:scale-90`}
+        />
       </div>
-      <div className="flex items-center justify-between w-full p-8">
+      <div
+        className="flex items-center justify-between w-full gap-4 p-8"
+        onClick={() => setSettings({ ...settings, sound: !settings.sound })}
+      >
         <h2>Sound</h2>
         <button
-          onClick={() => setSettings({ ...settings, sound: !settings.sound })}
-        >
-          {settings.sound ? "On" : "Off"}
-        </button>
+          className={`${
+            settings.sound ? "bg-green-500" : "bg-red-500"
+          } text-white p-4 rounded-lg transition-all active:scale-90`}
+        />
       </div>
-      <div className="flex items-center justify-between w-full p-8">
+      <div
+        className="flex items-center justify-between w-full gap-4 p-8"
+        onClick={() =>
+          setSettings({
+            ...settings,
+            colorBlindMode: !settings.colorBlindMode,
+          })
+        }
+      >
         <h2>Color Blind Mode</h2>
         <button
-          onClick={() =>
-            setSettings({
-              ...settings,
-              colorBlindMode: !settings.colorBlindMode,
-            })
-          }
-        >
-          {settings.colorBlindMode ? "On" : "Off"}
-        </button>
+          className={`${
+            settings.colorBlindMode ? "bg-green-500" : "bg-red-500"
+          } text-white p-4 rounded-lg transition-all active:scale-90`}
+        />
       </div>
-      <div className="flex items-center justify-between w-full p-8">
+      <div
+        className="flex items-center justify-between w-full gap-4 p-8"
+        onClick={() =>
+          setSettings({ ...settings, challengeMode: !settings.challengeMode })
+        }
+      >
         <h2>Challenge Mode</h2>
         <button
-          onClick={() =>
-            setSettings({ ...settings, challengeMode: !settings.challengeMode })
-          }
-        >
-          {settings.challengeMode ? "On" : "Off"}
-        </button>
+          className={`${
+            settings.challengeMode ? "bg-green-500" : "bg-red-500"
+          } text-white p-4 rounded-lg transition-all active:scale-90`}
+        />
       </div>
       <a href="https://github.com/" target={"_blank"} rel="noreferrer">
         Feedback!
