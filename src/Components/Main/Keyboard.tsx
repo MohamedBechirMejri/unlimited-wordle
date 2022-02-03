@@ -38,7 +38,7 @@ const Keyboard = ({
                 ${
                   key === "enter"
                     ? "bg-[#03ca77] text-white"
-                    : key === "<="
+                    : key === "<-"
                     ? "bg-[#0084ff] text-white"
                     : null
                 }  transition-all
@@ -46,7 +46,7 @@ const Keyboard = ({
               onClick={() => {
                 key === "enter"
                   ? submitWord()
-                  : key === "<="
+                  : key === "<-"
                   ? removeKey()
                   : addKey(key);
               }}
