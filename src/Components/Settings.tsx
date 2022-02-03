@@ -22,7 +22,7 @@ const Settings = ({
   return (
     <div className="flex flex-col items-center justify-center h-screen w-scren">
       <h1>Settings</h1>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-between w-full p-8">
         <h2>Language</h2>
         <select
           name="lang"
@@ -35,7 +35,7 @@ const Settings = ({
           <option value="fr">Français</option>
         </select>
       </div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-between w-full p-8">
         <h2>Dark Theme</h2>
         <button
           onClick={() =>
@@ -45,7 +45,7 @@ const Settings = ({
           {settings.darkTheme ? "On" : "Off"}
         </button>
       </div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-between w-full p-8">
         <h2>Sound</h2>
         <button
           onClick={() => setSettings({ ...settings, sound: !settings.sound })}
@@ -53,7 +53,7 @@ const Settings = ({
           {settings.sound ? "On" : "Off"}
         </button>
       </div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-between w-full p-8">
         <h2>Color Blind Mode</h2>
         <button
           onClick={() =>
@@ -66,7 +66,7 @@ const Settings = ({
           {settings.colorBlindMode ? "On" : "Off"}
         </button>
       </div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-between w-full p-8">
         <h2>Challenge Mode</h2>
         <button
           onClick={() =>
