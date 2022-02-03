@@ -1,31 +1,39 @@
 import React, { useState } from "react";
 import PickLanguage from "./Components/PickLanguage";
-import { LanguageContext } from "./Utils/LanguageContext";
+import { SettingsContext } from "./Utils/SettingsContext";
 import Header from "./Components/Header";
 import Info from "./Components/Info";
 import Leaderboard from "./Components/Leaderboard";
 import Settings from "./Components/Settings";
 import Main from "./Components/Main";
 const App = () => {
-  const [language, setLanguage] = useState("");
   const [page, setPage] = useState("");
+  const [settings, setSettings] = useState({
+    language: "",
+    darkTheme: false,
+    sound: false,
+    colorBlindMode: false,
+    challengeMode: false,
+  });
 
   return (
-    <LanguageContext.Provider value={language}>
+    <SettingsContext.Provider value={settings}>
       <div className="">
-        {!language && <PickLanguage setLanguage={setLanguage} />}
-        {language && <Header page={page} setPage={setPage} />}
+        {!settings.language && (
+          <PickLanguage settings={settings} setSettings={setSettings} />
+        )}
+        {settings.language && <Header page={page} setPage={setPage} />}
         {page === "info" ? (
           <Info />
         ) : page === "leaderboard" ? (
           <Leaderboard />
         ) : page === "settings" ? (
-          <Settings language={language} setLanguage={setLanguage} />
+          <Settings settings={settings} setSettings={setSettings} />
         ) : (
-          language && <Main />
+          settings.language && <Main />
         )}
       </div>
-    </LanguageContext.Provider>
+    </SettingsContext.Provider>
   );
 };
 

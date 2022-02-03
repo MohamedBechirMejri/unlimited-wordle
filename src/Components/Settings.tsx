@@ -1,11 +1,23 @@
 import React from "react";
 
 const Settings = ({
-  language,
-  setLanguage,
+  settings,
+  setSettings,
 }: {
-  language: string;
-  setLanguage: (arg0: string) => void;
+  settings: {
+    language: string;
+    darkTheme: boolean;
+    sound: boolean;
+    colorBlindMode: boolean;
+    challengeMode: boolean;
+  };
+  setSettings: (arg0: {
+    language: string;
+    darkTheme: boolean;
+    sound: boolean;
+    colorBlindMode: boolean;
+    challengeMode: boolean;
+  }) => void;
 }) => {
   return (
     <div>
@@ -15,8 +27,8 @@ const Settings = ({
         <select
           name="lang"
           id="lang"
-          value={language}
-          onChange={e => setLanguage(e.target.value)}
+          value={settings.language}
+          onChange={e => setSettings({ ...settings, language: e.target.value })}
         >
           <option value="ar">العربية </option>
           <option value="en">English</option>
