@@ -166,7 +166,7 @@ const Main = () => {
     <div
       className={` " flex flex-col items-center ${
         isGameOver ? "justify-center gap-8" : "justify-end gap-20"
-      } w-screen h-screen max-h-screen transition-all  " `}
+      } w-screen h-screen max-h-screen transition-all animate-reveal " `}
     >
       <div className=" flex items-center max-w-[500px] w-screen justify-evenly font-bold">
         <Messages message={message} />
