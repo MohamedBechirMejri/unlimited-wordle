@@ -20,7 +20,7 @@ const Settings = ({
   }) => void;
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-xl w-scren animate-reveal ">
+    <div className="flex flex-col items-center justify-center h-screen text-xl font-medium w-scren animate-reveal">
       <h1 className="text-3xl font-bold">Settings</h1>
       <div className="flex items-center justify-between w-full gap-4 p-8">
         <h2>Language</h2>
@@ -88,7 +88,12 @@ const Settings = ({
           } text-white p-4 rounded-lg transition-all active:scale-90`}
         />
       </div>
-      <a href="https://github.com/" target={"_blank"} rel="noreferrer">
+      <a
+        href="https://github.com/MohamedBechirMejri/unlimited-wordle/issues"
+        target={"_blank"}
+        rel="noreferrer"
+        className="px-4 py-2 transition-all rounded-lg ring ring-black hover:bg-black hover:text-white active:scale-90"
+      >
         Feedback!
       </a>
     </div>
