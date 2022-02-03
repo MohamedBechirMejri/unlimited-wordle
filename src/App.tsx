@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <SettingsContext.Provider value={settings}>
-      <div className="">
+      <div className="overflow-hidden">
         {!settings.language && (
           <PickLanguage settings={settings} setSettings={setSettings} />
         )}
