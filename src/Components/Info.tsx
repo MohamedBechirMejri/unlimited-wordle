@@ -9,46 +9,48 @@ import {
 
 const Info = () => {
   return (
-    <div>
-      <h1>Info</h1>
-      <h2>How To Play:</h2>{" "}
-      <p>
-        Guess the WORDLE in 6 tries. Each guess must be a valid word. Hit the
-        enter button to submit. After each guess, the color of the tiles will
-        change to show how close your guess was to the word. Examples The letter
-        W is in the word and in the correct spot. The letter I is in the word
-        but in the wrong spot. The letter U is not in the word in any spot.
-      </p>
-      <h2>Credits</h2>
-      <div className="flex flex-col items-center justify-center w-screen min-h-screen gap-8 py-20 text-4xl text-center text-white select-none animate-revealScores">
-        <p className="text-3xl font-medium">
+    <div className="flex flex-col items-center justify-center w-screen h-screen gap-8 text-xl text-center select-none animate-revealScores max-w-[500px]">
+      <h1 className="font-extrabold uppercase">Info</h1>
+      <h2 className="font-light uppercase ">How To Play:</h2>
+      <ul className="flex flex-col justify-start font-medium ">
+        <li> Guess the WORDLE in 6 tries.</li>
+        <li> Each guess must be a valid word.</li>
+        <li> Hit the enter button to submit.</li>
+        <li>
+          After each guess, the color of the tiles will change to show how close
+          your guess was to the word.
+        </li>
+      </ul>
+      <h2 className="font-extrabold uppercase">Credits</h2>
+      <div className="flex gap-2 font-medium">
+        Project by
+        <a
+          href="https://github.com/MohamedBechirMejri"
+          className="text-[#43c294] hover:underline"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          MohamedBechirMejri
+        </a>{" "}
+      </div>
+
+      <div className="">
+        {" "}
+        <h2 className="font-extrabold uppercase">Tech Used</h2>
+        <p className="flex flex-col gap-2 text-3xl font-medium text-center">
           <br />
-          <span className="text-[#61DBFB]">
-            React <SiReact />{" "}
+          <span className="text-[#61DBFB] flex w-full justify-between items-center gap-8">
+            React <SiReact />
           </span>
-          +
-          <span className="text-[#FFA611]">
-            {" "}
+          <span className="text-[#FFA611] flex w-full justify-between items-center gap-8">
             Firebase <SiFirebase />
           </span>
-          +{" "}
-          <span className="text-[#39bdf7]">
+          <span className="text-[#39bdf7] flex w-full justify-between items-center gap-8">
             TailwindCSS <SiTailwindcss />
           </span>
-          +{" "}
-          <span className="text-[#2f74c1]">
+          <span className="text-[#2f74c1] flex w-full justify-between items-center gap-8">
             Typescript <SiTypescript />
           </span>
-          Project by{" "}
-          <a
-            href="https://github.com/MohamedBechirMejri"
-            className="text-[#43c294] hover:underline"
-            target={"_blank"}
-            rel="noreferrer"
-          >
-            MohamedBechirMejri{" "}
-          </a>
-          for <p className="text-[#e3b260]  hover:underline">My Dad</p>.
         </p>
       </div>
     </div>
