@@ -32,6 +32,7 @@ const Info = () => {
         >
           MohamedBechirMejri
         </a>{" "}
+        for Dad.
       </div>
 
       <div className="">
@@ -42,9 +43,9 @@ const Info = () => {
           <span className="text-[#61DBFB] flex w-full justify-between items-center gap-8">
             React <SiReact />
           </span>
-          <span className="text-[#FFA611] flex w-full justify-between items-center gap-8">
+          {/* <span className="text-[#FFA611] flex w-full justify-between items-center gap-8">
             Firebase <SiFirebase />
-          </span>
+          </span> */}
           <span className="text-[#39bdf7] flex w-full justify-between items-center gap-8">
             TailwindCSS <SiTailwindcss />
           </span>
