@@ -2201,6 +2201,11 @@ an-array-of-english-words@^2.0.0:
   resolved "https://registry.yarnpkg.com/an-array-of-english-words/-/an-array-of-english-words-2.0.0.tgz#2d9de64929b864f1eff5bd53dead275ff1ac0c32"
   integrity sha512-FXnNvZSOI27kkKXeLSquhaTGP7z198UOQ4txaYO9fCfrjCh+D5SV7G7XqzEH0229+pAi4cjBEZ4WIQYgjKtO7Q==
 
+an-array-of-french-words@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/an-array-of-french-words/-/an-array-of-french-words-2.0.0.tgz#a83f5228c2042ed630e4e30409e5488240e88309"
+  integrity sha512-LRPhVZLteE0wrUFimKWcrEtXZcv8XiG9TArm37j7/PdO2G5f6UfgCny+ibH8CascxMXFMzTPlJcP01PgSmei8Q==
+
 ansi-escapes@^4.2.1, ansi-escapes@^4.3.1:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-4.3.2.tgz#6b2291d1db7d98b6521d5f1efa42d0f3a9feb65e"
