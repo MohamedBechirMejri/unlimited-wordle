@@ -9,7 +9,7 @@ import {
 
 const Info = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen gap-8 text-xl text-center select-none animate-reveal max-w-[500px]">
+    <div className="flex flex-col items-center justify-center w-screen h-screen gap-8 text-xl text-center select-none animate-reveal max-w-[500px] m-auto">
       <h1 className="font-extrabold uppercase">Info</h1>
       <h2 className="font-light uppercase ">How To Play:</h2>
       <ul className="flex flex-col justify-start font-medium ">
