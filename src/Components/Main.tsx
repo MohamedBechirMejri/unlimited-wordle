@@ -8,8 +8,18 @@ import GameOver from "./Main/GameOver";
 import { generateCongrats } from "../Utils/generateCongrats";
 import AttemptSound from "./Main/AttemptSound";
 
-const Main = () => {
-  const [word, setWord] = useState(generateWord().split(""));
+const Main = ({
+  settings,
+}: {
+  settings: {
+    language: string;
+    darkTheme: boolean;
+    sound: boolean;
+    colorBlindMode: boolean;
+    challengeMode: boolean;
+  };
+}) => {
+  const [word, setWord] = useState(generateWord(settings.language).split(""));
   const [attempts, setAttempts] = useState({});
   const [keysStatus, setKeysStatus] = useState({
     correct: [],
@@ -75,7 +85,7 @@ const Main = () => {
   }, [word]);
 
   const playAgain = () => {
-    setWord(generateWord().split(""));
+    setWord(generateWord(settings.language).split(""));
     setCurrentAttempt(1);
     setCurrentLetter(0);
     setIsAttemptFull(false);

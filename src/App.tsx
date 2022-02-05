@@ -42,7 +42,7 @@ const App = () => {
         ) : page === "settings" ? (
           <Settings settings={settings} setSettings={setSettings} />
         ) : (
-          settings.language && <Main />
+          settings.language && <Main settings={settings} />
         )}
       </div>
     </SettingsContext.Provider>
