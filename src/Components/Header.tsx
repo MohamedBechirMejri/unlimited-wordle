@@ -32,13 +32,13 @@ const Header = ({
         >
           {page === "info" ? <MdClose /> : <MdHelpOutline />}
         </button>
-        <button
+        {/* <button
           onClick={() => {
             setPage(page === "leaderboard" ? "" : "leaderboard");
           }}
         >
           {page === "leaderboard" ? <MdClose /> : <MdOutlineLeaderboard />}
-        </button>
+        </button> */}
         <button
           onClick={() => {
             setPage(page === "settings" ? "" : "settings");

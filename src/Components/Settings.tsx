@@ -35,7 +35,7 @@ const Settings = ({
           <option value="fr">Français</option>
         </select>
       </div>
-      <div
+      {/* <div
         className="flex items-center justify-between w-full gap-4 p-8"
         onClick={() =>
           setSettings({ ...settings, darkTheme: !settings.darkTheme })
@@ -87,7 +87,7 @@ const Settings = ({
             settings.challengeMode ? "bg-green-500" : "bg-red-500"
           } text-white p-4 rounded-lg transition-all active:scale-90`}
         />
-      </div>
+      </div> */}
       <a
         href="https://github.com/MohamedBechirMejri/unlimited-wordle/issues"
         target={"_blank"}
