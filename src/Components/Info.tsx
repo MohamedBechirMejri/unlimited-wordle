@@ -4,7 +4,7 @@ import {
   SiTypescript,
   SiReact,
   SiTailwindcss,
-  SiFirebase,
+  // SiFirebase,
 } from "react-icons/si";
 
 const Info = () => {
