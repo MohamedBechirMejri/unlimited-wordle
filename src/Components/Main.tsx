@@ -41,8 +41,6 @@ const Main = ({
   const [a, setA] = useState([] as string[]);
 
   useEffect(() => {
-    console.log("word", word);
-
     const dots = [];
     const statuses = [];
     for (let i = 0; i < word.length; i++) {
