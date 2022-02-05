@@ -30,7 +30,7 @@ const Settings = ({
           value={settings.language}
           onChange={e => setSettings({ ...settings, language: e.target.value })}
         >
-          <option value="ar">العربية </option>
+          {/* <option value="ar">العربية </option> */}
           <option value="en">English</option>
           <option value="fr">Français</option>
         </select>

@@ -27,12 +27,12 @@ const PickLanguage = ({
       <h1 className="font-bold ">Welcome To Unlimited Wordle!</h1>
       <p className="text-sm">Please select your language:</p>
       <div className="flex flex-col gap-2">
-        <button
+        {/* <button
           className="px-2 py-1 text-white transition-all rounded bg-slate-800 active:scale-95"
           onClick={() => setLanguage("ar")}
         >
           العربية
-        </button>
+        </button> */}
         <button
           className="px-2 py-1 text-white transition-all rounded bg-slate-800 active:scale-95"
           onClick={() => setLanguage("en")}
