@@ -22,13 +22,22 @@ module.exports = {
           },
         },
         revealCorrect: {
+          "0%": {
+            transform: "skewY( -10%)",
+            background: "transparent",
+            margin: 0,
+          },
           "100%": {
-            background: "crimson",
+            background: "linear-gradient(0deg, crimson, #ff476a)",
+            margin: 0,
           },
         },
         revealMisplaced: {
           "100%": {
-            background: "yellow",
+            width: "2em",
+            height: "2em",
+            color: "orange",
+            background: "linear-gradient(45deg, gold, yellow)",
           },
         },
       },

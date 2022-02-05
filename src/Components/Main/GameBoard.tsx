@@ -22,13 +22,13 @@ const GameBoard = ({
               >
                 <Sound status={status} timeout={(i + 1) * 250} />
                 <p
-                  className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 ${
+                  className={`flex items-center justify-center w-full h-full bg-gradient-to-b from-sky-400 m-auto mt-[3px] ${
                     status === "correct"
                       ? "animate-revealCorrect"
                       : status === "misplaced"
-                      ? "animate-revealMisplaced rounded-full"
+                      ? "animate-revealMisplaced rounded-full  "
                       : ""
-                  } `}
+                  } transition-all `}
                   style={{
                     animationName:
                       status === "correct"
