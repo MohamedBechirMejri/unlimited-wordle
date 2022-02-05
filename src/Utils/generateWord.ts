@@ -28,6 +28,5 @@ export const generateWord = (lang: string, isChallengeMode = false) => {
       );
     });
   }
-  console.log(words);
   return words[Math.floor(Math.random() * words.length)];
 };
