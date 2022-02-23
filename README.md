@@ -1,4 +1,4 @@
-# Unlimited Wordle/ Motus
+# Unlimited Wordle/ Motus!
 
 ## Tech Used
 
