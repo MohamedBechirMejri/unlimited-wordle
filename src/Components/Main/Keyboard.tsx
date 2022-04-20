@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { SiWindicss } from "react-icons/si";
 import { layouts } from "../../Utils/layouts";
 
 const Keyboard = ({
@@ -17,6 +18,18 @@ const Keyboard = ({
   };
 }) => {
   const { correct, incorrect, misplaced } = keysStatus;
+
+  const keydownHandler = (e: KeyboardEvent) => {
+    let key = e.key.toLowerCase();
+    if (key === "backspace") key = "<-";
+    document.getElementById(key)?.click();
+  };
+
+  useEffect(() => {
+    addEventListener("keydown", keydownHandler);
+    return () => removeEventListener("keydown", keydownHandler);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center w-screen ">
       {layouts.en.map((row, rowIndex) => (
@@ -24,6 +37,7 @@ const Keyboard = ({
           {row.map((key, keyIndex) => (
             <button
               key={keyIndex}
+              id={key}
               className={`"
                text-2xl font-bold text-center border rounded p-[2.55%] sm:p-4 active:scale-125 bg-white shadow transition-all select-none
                 ${
