@@ -28,7 +28,7 @@ const GameBoard = ({
                       : status === "misplaced"
                       ? "animate-revealMisplaced rounded-full  "
                       : ""
-                  } transition-all `}
+                  } transition-all text-[70%]`}
                   style={{
                     animationName:
                       status === "correct"
