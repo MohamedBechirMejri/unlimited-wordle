@@ -28,7 +28,9 @@ const App = () => {
     localStorage.setItem("settings", JSON.stringify(settings));
   }, [settings]);
 
-  return (
+  return innerHeight < 750 || innerWidth < 400 ? (
+    <h1>Screen is too small. Get a better device.</h1>
+  ) : (
     <SettingsContext.Provider value={settings}>
       <div className="overflow-hidden">
         {!settings.language && (

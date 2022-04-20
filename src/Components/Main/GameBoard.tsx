@@ -7,7 +7,7 @@ const GameBoard = ({
   currentAttempt: number;
 }) => {
   return (
-    <div className="w-[80vw] h-[80vw] bg-sky-500 border-2 border-sky-200  flex flex-col items-center justify-center rounded-sm text-white uppercase font-bold overflow-hidden shadow text-3xl max-w-[500px] max-h-[500px] select-none ">
+    <div className="xl:w-[22vw] xl:h-[22vw] bg-sky-500 border-2 border-sky-200  flex flex-col items-center justify-center rounded-sm text-white uppercase font-bold overflow-hidden shadow text-3xl max-w-[500px] max-h-[500px] select-none w-[300px] h-[300px] shrink-0">
       {Object.values(attempts).map((attempt, index) => (
         <div
           key={index}
@@ -28,7 +28,7 @@ const GameBoard = ({
                       : status === "misplaced"
                       ? "animate-revealMisplaced rounded-full  "
                       : ""
-                  } transition-all `}
+                  } transition-all text-[70%]`}
                   style={{
                     animationName:
                       status === "correct"
