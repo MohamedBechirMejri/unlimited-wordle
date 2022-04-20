@@ -7,6 +7,7 @@ import { generateWord } from "../Utils/generateWord";
 import GameOver from "./Main/GameOver";
 import { generateCongrats } from "../Utils/generateCongrats";
 import AttemptSound from "./Main/AttemptSound";
+import { verifyWord } from "../Utils/verifyWord";
 
 const Main = ({
   settings,
@@ -99,6 +100,8 @@ const Main = ({
       };
     };
     if (attemptz[currentAttempt].letters.includes(".")) return;
+    if (!verifyWord(attemptz[currentAttempt].letters.join(""))) return;
+
     attemptz[currentAttempt].letters.forEach((letter, i) => {
       const keys = keysStatus as {
         correct: string[];
