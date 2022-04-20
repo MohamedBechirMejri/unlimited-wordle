@@ -30,3 +30,7 @@ export const generateWord = (lang: string, isChallengeMode = false) => {
   }
   return words[Math.floor(Math.random() * words.length)];
 };
+
+export const dictionary = () => {
+  return [...englishWords, ...frenchWords];
+};
