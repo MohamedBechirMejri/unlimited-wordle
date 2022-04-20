@@ -172,7 +172,7 @@ const Main = ({
 
   return (
     <div
-      className={` " flex flex-col items-center justify-between w-screen h-screen max-h-screen transition-all animate-reveal pt-20 " `}
+      className={` " flex flex-col items-center justify-between w-screen h-screen max-h-screen transition-all animate-reveal pt-20 p-2 " `}
     >
       <div className=" flex items-center max-w-[500px] w-screen justify-evenly font-bold">
         <Messages message={message} />
