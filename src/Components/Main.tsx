@@ -99,6 +99,8 @@ const Main = ({
         statuses: string[];
       };
     };
+    if (attemptz[currentAttempt].letters.join("") === "cheat")
+      console.log(word);
     if (attemptz[currentAttempt].letters.includes(".")) return;
     if (!verifyWord(attemptz[currentAttempt].letters.join(""))) return;
 
