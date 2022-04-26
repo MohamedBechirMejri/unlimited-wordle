@@ -157,7 +157,7 @@ const Main = ({
     };
     newAttempts[currentAttempt].letters[currentLetter] = ".";
     setAttempts(newAttempts);
-    currentLetter > 0 && setCurrentLetter(currentLetter - 1);
+    (!isAttemptFull && currentLetter > 0) && setCurrentLetter(currentLetter - 1);
     currentLetter === 0 && setIsAttemptEmpty(true);
   };
   const addKey = (key: string): void => {
