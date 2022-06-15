@@ -22,15 +22,6 @@ const Main = ({
 }) => {
   const [word, setWord] = useState(generateWord(settings.language).split(""));
   const [attempts, setAttempts] = useState({});
-  // const [keysStatus, setKeysStatus] = useState({
-  //   correct: [],
-  //   misplaced: [],
-  //   incorrect: [],
-  // } as {
-  //   correct: string[];
-  //   misplaced: string[];
-  //   incorrect: string[];
-  // });
   const [currentAttempt, setCurrentAttempt] = useState(1);
   // const [currentLetter, setCurrentLetter] = useState(0);
   // const [isAttemptFull, setIsAttemptFull] = useState(false);
@@ -39,46 +30,13 @@ const Main = ({
   const [isGameWon, setIsGameWon] = useState(false);
   // const [streak, setStreak] = useState(0);
   const [message, setMessage] = useState("");
-  // const [a, setA] = useState([] as string[]);
 
   // useEffect(() => {
   //   const dots = [];
   //   const statuses = [];
   //   for (let i = 0; i < word.length; i++) {
   //     dots.push(".");
-  //     statuses.push("empty");
   //   }
-  //   setAttempts({
-  //     1: {
-  //       letters: [...dots],
-  //       statuses: [...statuses],
-  //     },
-  //     2: {
-  //       letters: [...dots],
-  //       statuses: [...statuses],
-  //     },
-  //     3: {
-  //       letters: [...dots],
-  //       statuses: [...statuses],
-  //     },
-  //     4: {
-  //       letters: [...dots],
-  //       statuses: [...statuses],
-  //     },
-  //     5: {
-  //       letters: [...dots],
-  //       statuses: [...statuses],
-  //     },
-  //     6: {
-  //       letters: [...dots],
-  //       statuses: [...statuses],
-  //     },
-  //   });
-  //   setKeysStatus({
-  //     correct: [],
-  //     misplaced: [],
-  //     incorrect: [],
-  //   });
   //   setMessage("");
   //   setA([]);
   // }, [word]);
