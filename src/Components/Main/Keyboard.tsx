@@ -6,19 +6,11 @@ const Keyboard = ({
   submitWord,
   removeKey,
   addKey,
-  keysStatus,
 }: {
   submitWord: () => void;
   removeKey: () => void;
   addKey: (key: string) => void;
-  keysStatus: {
-    correct: string[];
-    misplaced: string[];
-    incorrect: string[];
-  };
 }) => {
-  const { correct, incorrect, misplaced } = keysStatus;
-
   const keydownHandler = (e: KeyboardEvent) => {
     let key = e.key.toLowerCase();
     if (key === "backspace") key = "<-";
@@ -40,15 +32,7 @@ const Keyboard = ({
               id={key}
               className={`"
                text-2xl font-bold text-center border rounded p-[2.55%] sm:p-4 active:scale-125 bg-white shadow transition-all select-none
-                ${
-                  correct.includes(key)
-                    ? "bg-[crimson] text-white"
-                    : misplaced.includes(key)
-                    ? "bg-[#ffe000]"
-                    : incorrect.includes(key)
-                    ? "bg-[#6b6b6b] text-white"
-                    : null
-                }
+                 
                 ${
                   key === "enter"
                     ? "bg-[#03ca77] text-white"
