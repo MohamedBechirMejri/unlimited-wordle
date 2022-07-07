@@ -19,7 +19,7 @@
     "react-scripts": "^5.0.1",
     "typescript": "^4.6.3",
     "use-sound": "^4.0.1"
-  },
+  }, 
   "homepage": "https://mohamedbechirmejri.github.io/unlimited-wordle/",
   "scripts": {
     "start": "react-scripts start",
