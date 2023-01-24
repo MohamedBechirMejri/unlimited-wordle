@@ -1,3 +1,5 @@
+| this is now archived,a better version is available [here](https://github.com/MohamedBechirMejri/unlimited-wordle)
+
 # Unlimited Wordle/ Motus!
 
 ## Tech Used
