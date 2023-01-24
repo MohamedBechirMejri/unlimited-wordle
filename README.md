@@ -1,4 +1,4 @@
-| this is now archived,a better version is available [here](https://github.com/MohamedBechirMejri/unlimited-wordle)
+| this is now archived,a better version is available [here](https://github.com/MohamedBechirMejri/nyutab)
 
 # Unlimited Wordle/ Motus!
 
